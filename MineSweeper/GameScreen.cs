@@ -1,0 +1,254 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
+using System.Windows.Forms;
+using System.IO;
+
+namespace MineSweeper
+{
+    public partial class GameScreen : Form
+    {
+        int bombPercent = 10;//
+        int width = 10;
+        int height = 10;
+        bool isFirstClick = true;
+        FieldButton[,] field;
+        int cellsOpened = 0;
+        int bombs = 0;
+        private readonly Stopwatch stopwatch = new Stopwatch();//создаём "секундомер", чтобы считать время от начала игры
+
+
+        public GameScreen()
+        {
+            InitializeComponent();
+
+            this.DoubleBuffered = true;
+            StartPosition = FormStartPosition.CenterScreen;//открывает форму по центру монитора
+            GameMenuPanel.Hide();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.FormBorderStyle = FormBorderStyle.None;//убираем кнопки навигации сверху
+            field = new FieldButton[width, height];
+
+            stopwatch.Start();//запустить секундомер
+            Random random = new Random();
+            //x И y - позиции создаваемых на форме кнопок
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    FieldButton newButton = new FieldButton
+                    {
+                        Location = new Point(x * 30, y * 30),
+                        Size = new Size(30, 30),
+                        isClickable = true//по дефолту все кнопки активны при создании
+                    };
+                    if (random.Next(0, 100) <= bombPercent)//выбирается число от 0 до 100
+                    {
+                        newButton.isBomb = true;//если выбранное число < процента бомб на поле, то нажатая кнопка - БОМБА
+                        bombs++;
+                    }
+                    newButton.xCoord = x;
+                    newButton.yCoord = y;
+                    Controls.Add(newButton);
+                    newButton.MouseUp += new MouseEventHandler(FieldButtonClick);//"прицепляем" созданную нами ф-ю на событие MouseUp
+                    field[x, y] = newButton;
+                }
+            }
+        }
+
+        void FieldButtonClick(object sender, MouseEventArgs e)//функция нажатия на кнопку
+        {
+            FieldButton clickedButton = (FieldButton)sender;//явное преобразование объекта object в FieldButton
+            if (e.Button == MouseButtons.Left && clickedButton.isClickable)
+            {
+                if (clickedButton.isBomb)
+                {
+                    if (isFirstClick)//делаем кнопку не бомбой при первом клике
+                    {
+                        clickedButton.isBomb = false;
+                        isFirstClick = false;
+                        bombs--;
+                        //открыть все соседние клетки
+                        OpenRegion(clickedButton.xCoord, clickedButton.yCoord, clickedButton);
+
+                        clickedButton.BackColor = Color.Silver;
+                    }
+                    else
+                        Detonation();
+                }
+                else
+                    EmptyFieldButtonClick(clickedButton);//показываем количество бомб вокруг
+
+                isFirstClick = false;
+            }
+            if (e.Button == MouseButtons.Right)//если нажата правая кнопка
+            {
+                clickedButton.isClickable = !clickedButton.isClickable;//если активна кнопка - делаем неактивной
+
+                if (!clickedButton.isClickable)
+                    clickedButton.BackColor = Color.OrangeRed;
+
+                else
+                    clickedButton.BackColor = Color.LightGray;
+            }
+            Victory();
+        }
+
+        void Detonation()
+        {
+            //окрываем при попадании на бомбу все бомбы
+            foreach (FieldButton button in field)
+            {
+                if (button.isBomb)
+                {
+                    button.BackColor = Color.Black;
+                    button.isClickable = false;
+                }
+                else
+                    button.Enabled = false;//делаем неактивными все кнопки при проигрыше
+            }
+            TotalTimeLabel.Text += time_label.Text.ToString();
+            WinLoseLabel.Text = "Вы проиграли!!!";
+            SmailPictureBox.Image = new Bitmap(Properties.Resources.Смайл2);
+            stopwatch.Stop(); //остановить секундомер
+            GameMenuPanel.Show();
+        }
+
+        void EmptyFieldButtonClick(FieldButton clickedButton)//открытие пустых
+        {
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    //если совпадает с нажатой кнопкой
+                    if (field[x, y] == clickedButton)
+                        OpenRegion(x, y, clickedButton);
+                }
+            }
+        }
+
+        void OpenRegion(int xCoord, int yCoord, FieldButton clickedButton)//метод для автоматического раскрытия всех соседних пустых кнопок
+        {
+            Queue<FieldButton> queue = new Queue<FieldButton>();//очередь
+            //если нет соседних клеток бомб то добавляем все соседние клетки вокруг этой клетки в очередь
+            queue.Enqueue(clickedButton);//добавляем кнопку на которую нажали в очередь
+            clickedButton.wasAdded = true;
+            while (queue.Count > 0)
+            {
+                FieldButton currentCell = queue.Dequeue();//получаем первый эл-т нашей очереди
+                OpenCell(currentCell.xCoord, currentCell.yCoord, currentCell);
+                cellsOpened++;
+                if (CountBombsAround(currentCell.xCoord, currentCell.yCoord) == 0)
+                {
+                    //проходимся по соседним клеткам вокруг нажатой кнопки
+                    for (int y = currentCell.yCoord - 1; y <= currentCell.yCoord + 1; y++)
+                    {
+                        for (int x = currentCell.xCoord - 1; x <= currentCell.xCoord + 1; x++)
+                        {
+                            //исключаем из рассмотрения начальные значения координат кнопки
+                            if (x == currentCell.xCoord && y == currentCell.yCoord)
+                                continue;
+
+                            if (x >= 0 && x < width && y < height && y >= 0)//проверка что не выходим за границы
+                            {
+                                if (!field[x, y].wasAdded)//если кнопка не была добавлена в очередь, то добавить её
+                                {
+                                    queue.Enqueue(field[x, y]);//вставляем в очередь кнопку
+                                    field[x, y].wasAdded = true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        void OpenCell(int x, int y, FieldButton clickedButton)//открыть кнопку на которую нажали и показать кол-во бомб вокруг и деактивируеим её
+        {
+            int bombsAround = CountBombsAround(x, y);
+            if (bombsAround == 0)
+            {
+                //если 0 бомб вокруг кнопки то ничего не делаем
+            }
+            else
+            {
+                int newSize = 12;
+                clickedButton.Font = new Font(clickedButton.Font.FontFamily, newSize);
+                clickedButton.Text = "" + bombsAround;//считаем количество бомб вокруг в поле 3х3 и выводим текст в нажатую кнопку
+            }
+
+            clickedButton.Enabled = false;//делаем неактивной кнопку после нажатия на неё
+            clickedButton.BackColor = Color.Silver;
+        }
+
+        int CountBombsAround(int xCoord, int yCoord)//подсчёт бомб вокруг кнопки в поле 3х3
+        {
+            int bombsAround = 0;
+            for (int x = xCoord - 1; x <= xCoord + 1; x++)
+            {
+                for (int y = yCoord - 1; y <= yCoord + 1; y++)
+                {
+                    //проверка на нажатие на кнопки находящиеся у границ поля
+                    if (x >= 0 && x < width && y >= 0 && y < height)
+                    {
+                        if (field[x, y].isBomb == true)
+                            bombsAround++;
+                    }
+                }
+            }
+            return bombsAround;
+        }
+
+        void Victory()
+        {
+            int cells = width * height;//считаем кол-во всех клеток
+            int emptyCells = cells - bombs;//кол-во пустых клеток
+            if (cellsOpened >= emptyCells)//условие победы
+            {
+                TotalTimeLabel.Text += time_label.Text.ToString();
+                stopwatch.Stop(); //остановить секундомер
+                WinLoseLabel.Text = "Вы победили!!!";
+                SmailPictureBox.Image = new Bitmap(Properties.Resources.Смайл3);
+                GameMenuPanel.Show();
+                GlobalData.PlayerTime = stopwatch.Elapsed.ToString("mm\\:ss");
+                foreach (FieldButton button in field)
+                {
+                    button.isClickable = false;//делаем "ненажимаемыми" все кнопки при победе
+                    button.Enabled = false;
+                }
+            }
+        }
+
+        private void RestartLabel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            GameScreen gameScreen = new GameScreen();
+            gameScreen.Show();
+        }
+
+        private void HomeLabel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
+        }
+
+        private void GameTimer_Tick(object sender, EventArgs e)
+        {
+            time_label.Text = stopwatch.Elapsed.ToString("mm\\:ss");
+        }
+    }
+
+    public class FieldButton : Button
+    {
+        public bool isBomb;//хранит информацию является ли кнопка бомбой
+        public bool isClickable;//храниит информацию можно ли нажать на кнопку или нет
+        public bool wasAdded;//хранит информацию об уже открытых клетках
+        public int xCoord;
+        public int yCoord;
+    }
+}
