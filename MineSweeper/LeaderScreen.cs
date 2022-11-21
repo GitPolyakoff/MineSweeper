@@ -19,7 +19,7 @@ namespace MineSweeper
         {
             InitializeComponent();
             players = new List<Player>();
-            
+            this.FormBorderStyle = FormBorderStyle.None;//убираем кнопки навигации сверху
             StartPosition = FormStartPosition.CenterScreen;
             this.DoubleBuffered = true;
             Time = "";

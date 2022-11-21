@@ -17,6 +17,7 @@ namespace MineSweeper
         public SettingsScreen()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;//убираем кнопки навигации сверху
             StartPosition = FormStartPosition.CenterScreen;
             this.DoubleBuffered = true;
         }

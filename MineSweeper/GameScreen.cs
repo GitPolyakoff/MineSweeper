@@ -26,6 +26,7 @@ namespace MineSweeper
             this.DoubleBuffered = true;
             StartPosition = FormStartPosition.CenterScreen;//открывает форму по центру монитора
             GameMenuPanel.Hide();
+            PausePanel.Hide();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -116,6 +117,8 @@ namespace MineSweeper
             SmailPictureBox.Image = new Bitmap(Properties.Resources.Смайл2);
             stopwatch.Stop(); //остановить секундомер
             GameMenuPanel.Show();
+            PausePictureBox.Hide();
+            ReplayPictureBox.Hide();
         }
 
         void EmptyFieldButtonClick(FieldButton clickedButton)//открытие пустых
@@ -220,6 +223,8 @@ namespace MineSweeper
                     button.isClickable = false;//делаем "ненажимаемыми" все кнопки при победе
                     button.Enabled = false;
                 }
+                PausePictureBox.Hide();
+                ReplayPictureBox.Hide();
             }
         }
 
@@ -240,6 +245,44 @@ namespace MineSweeper
         private void GameTimer_Tick(object sender, EventArgs e)
         {
             time_label.Text = stopwatch.Elapsed.ToString("mm\\:ss");
+        }
+
+        private void ReplayPictureBox_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            GameScreen gameScreen = new GameScreen();
+            gameScreen.Show();
+        }
+
+        private void PausePictureBox_Click(object sender, EventArgs e)
+        {
+            PausePanel.Show();
+            stopwatch.Stop();
+            foreach (FieldButton button in field)
+            {
+                button.isClickable = false;
+                button.Enabled = false;
+                ReplayPictureBox.Hide();
+            }
+        }
+
+        private void ContinueButton_Click(object sender, EventArgs e)
+        {
+            PausePanel.Hide();
+            stopwatch.Start();
+            ReplayPictureBox.Show();
+            foreach (FieldButton button in field)
+            {
+                button.isClickable = true;
+                button.Enabled = true;
+            }
+        }
+
+        private void ToMenuButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
         }
     }
 

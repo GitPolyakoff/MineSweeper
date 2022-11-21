@@ -49,3 +49,17 @@ C:\Users\partn\Desktop\MineSweeper\MineSweeper\obj\Debug\MineSweeper.csproj.Gene
 C:\Users\partn\Desktop\MineSweeper\MineSweeper\obj\Debug\MineSweeper.csproj.CoreCompileInputs.cache
 C:\Users\partn\Desktop\MineSweeper\MineSweeper\obj\Debug\MineSweeper.exe
 C:\Users\partn\Desktop\MineSweeper\MineSweeper\obj\Debug\MineSweeper.pdb
+C:\Users\partn\Desktop\MineSweeper\MineSweeper\MineSweeper\bin\Debug\MineSweeper.exe.config
+C:\Users\partn\Desktop\MineSweeper\MineSweeper\MineSweeper\bin\Debug\MineSweeper.exe
+C:\Users\partn\Desktop\MineSweeper\MineSweeper\MineSweeper\bin\Debug\MineSweeper.pdb
+C:\Users\partn\Desktop\MineSweeper\MineSweeper\MineSweeper\obj\Debug\MineSweeper.csproj.AssemblyReference.cache
+C:\Users\partn\Desktop\MineSweeper\MineSweeper\MineSweeper\obj\Debug\MineSweeper.GameScreen.resources
+C:\Users\partn\Desktop\MineSweeper\MineSweeper\MineSweeper\obj\Debug\MineSweeper.LeaderScreen.resources
+C:\Users\partn\Desktop\MineSweeper\MineSweeper\MineSweeper\obj\Debug\MineSweeper.MainForm.resources
+C:\Users\partn\Desktop\MineSweeper\MineSweeper\MineSweeper\obj\Debug\MineSweeper.NameForm.resources
+C:\Users\partn\Desktop\MineSweeper\MineSweeper\MineSweeper\obj\Debug\MineSweeper.Properties.Resources.resources
+C:\Users\partn\Desktop\MineSweeper\MineSweeper\MineSweeper\obj\Debug\MineSweeper.SettingsScreen.resources
+C:\Users\partn\Desktop\MineSweeper\MineSweeper\MineSweeper\obj\Debug\MineSweeper.csproj.GenerateResource.cache
+C:\Users\partn\Desktop\MineSweeper\MineSweeper\MineSweeper\obj\Debug\MineSweeper.csproj.CoreCompileInputs.cache
+C:\Users\partn\Desktop\MineSweeper\MineSweeper\MineSweeper\obj\Debug\MineSweeper.exe
+C:\Users\partn\Desktop\MineSweeper\MineSweeper\MineSweeper\obj\Debug\MineSweeper.pdb

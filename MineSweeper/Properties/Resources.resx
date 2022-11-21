@@ -127,6 +127,12 @@
   <data name="Настройка1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Настройка1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Пауза" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Пауза.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Перезагрузка" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Перезагрузка.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Смайл1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Смайл1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

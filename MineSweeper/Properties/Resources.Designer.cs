@@ -93,6 +93,26 @@ namespace MineSweeper.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Пауза {
+            get {
+                object obj = ResourceManager.GetObject("Пауза", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Перезагрузка {
+            get {
+                object obj = ResourceManager.GetObject("Перезагрузка", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Смайл1 {
             get {
                 object obj = ResourceManager.GetObject("Смайл1", resourceCulture);
