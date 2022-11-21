@@ -32,6 +32,7 @@ namespace MineSweeper
             this.ColorComboBox = new System.Windows.Forms.ComboBox();
             this.SelectedColorButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.DifficultyComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,11 +51,12 @@ namespace MineSweeper
             // 
             // SelectedColorButton
             // 
-            this.SelectedColorButton.Location = new System.Drawing.Point(191, 55);
+            this.SelectedColorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SelectedColorButton.Location = new System.Drawing.Point(220, 88);
             this.SelectedColorButton.Name = "SelectedColorButton";
-            this.SelectedColorButton.Size = new System.Drawing.Size(135, 25);
+            this.SelectedColorButton.Size = new System.Drawing.Size(135, 44);
             this.SelectedColorButton.TabIndex = 3;
-            this.SelectedColorButton.Text = "Применить";
+            this.SelectedColorButton.Text = "Применить уровень сложности";
             this.SelectedColorButton.UseVisualStyleBackColor = true;
             this.SelectedColorButton.Click += new System.EventHandler(this.SelectedColorButton_Click);
             // 
@@ -69,11 +71,24 @@ namespace MineSweeper
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // DifficultyComboBox
+            // 
+            this.DifficultyComboBox.FormattingEnabled = true;
+            this.DifficultyComboBox.Items.AddRange(new object[] {
+            "Проще простого (поле 5х5)",
+            "Любитель (поле 8х8)",
+            "Опытный сапёр (поле 10х10)"});
+            this.DifficultyComboBox.Location = new System.Drawing.Point(34, 100);
+            this.DifficultyComboBox.Name = "DifficultyComboBox";
+            this.DifficultyComboBox.Size = new System.Drawing.Size(178, 21);
+            this.DifficultyComboBox.TabIndex = 4;
+            // 
             // SettingsScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 371);
+            this.Controls.Add(this.DifficultyComboBox);
             this.Controls.Add(this.SelectedColorButton);
             this.Controls.Add(this.ColorComboBox);
             this.Controls.Add(this.pictureBox1);
@@ -89,5 +104,6 @@ namespace MineSweeper
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox ColorComboBox;
         private System.Windows.Forms.Button SelectedColorButton;
+        private System.Windows.Forms.ComboBox DifficultyComboBox;
     }
 }

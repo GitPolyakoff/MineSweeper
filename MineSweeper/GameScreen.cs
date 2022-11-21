@@ -32,6 +32,31 @@ namespace MineSweeper
         private void Form1_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.None;//убираем кнопки навигации сверху
+
+            StreamReader sr = new StreamReader(GlobalData.DifficultSetting);
+            string str;
+            while (!sr.EndOfStream)
+            {
+                str = sr.ReadLine();
+                if (string.IsNullOrEmpty(str))
+                    continue;
+                if (0 == int.Parse(str))
+                {
+                    width = 5;
+                    height = 5;
+                }
+                if (1 == int.Parse(str))
+                {
+                    width = 8;
+                    height = 8;
+                }
+                if (2 == int.Parse(str))
+                {
+                    width = 10;
+                    height = 10;
+                }
+            }
+            sr.Close();
             field = new FieldButton[width, height];
 
             stopwatch.Start();//запустить секундомер

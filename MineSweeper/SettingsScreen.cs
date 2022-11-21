@@ -13,7 +13,7 @@ namespace MineSweeper
 {
     public partial class SettingsScreen : Form
     {
-        
+
         public SettingsScreen()
         {
             InitializeComponent();
@@ -21,17 +21,20 @@ namespace MineSweeper
             StartPosition = FormStartPosition.CenterScreen;
             this.DoubleBuffered = true;
         }
-        
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Hide();
             MainForm mainForm = new MainForm();
-            
+
             mainForm.Show();
         }
 
         private void SelectedColorButton_Click(object sender, EventArgs e)
         {
+            string path = GlobalData.DifficultSetting;
+            StreamWriter writer = null;
+
             switch (ColorComboBox.SelectedIndex)
             {
                 case 0: //красный
@@ -50,6 +53,22 @@ namespace MineSweeper
                     this.BackColor = Color.White;
                     break;
             }
-        }       
+
+            try
+            {
+                writer = new StreamWriter(path, false, Encoding.Default);
+                writer.WriteLine(DifficultyComboBox.SelectedIndex);
+                writer.Close();
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message, "Ошибка при сохранении файла");
+            }
+            finally
+            {
+                if (writer != null)
+                    writer.Dispose();
+            }
+        }
     }
 }
