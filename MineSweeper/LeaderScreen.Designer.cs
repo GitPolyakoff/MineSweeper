@@ -32,6 +32,8 @@ namespace MineSweeper
             this.LeaderGroupBox = new System.Windows.Forms.GroupBox();
             this.LeaderlistBox = new System.Windows.Forms.ListBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.FolderTextBox = new System.Windows.Forms.TextBox();
             this.LeaderGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -66,19 +68,38 @@ namespace MineSweeper
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 304);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Путь:";
+            // 
+            // FolderTextBox
+            // 
+            this.FolderTextBox.Location = new System.Drawing.Point(52, 304);
+            this.FolderTextBox.Multiline = true;
+            this.FolderTextBox.Name = "FolderTextBox";
+            this.FolderTextBox.Size = new System.Drawing.Size(189, 52);
+            this.FolderTextBox.TabIndex = 15;
+            // 
             // LeaderScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(261, 371);
+            this.Controls.Add(this.FolderTextBox);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.LeaderGroupBox);
             this.Controls.Add(this.pictureBox1);
             this.Name = "LeaderScreen";
             this.Text = "LeaderScreen";
-            
             this.LeaderGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -87,6 +108,7 @@ namespace MineSweeper
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox LeaderGroupBox;
         private System.Windows.Forms.ListBox LeaderlistBox;
-        
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox FolderTextBox;
     }
 }

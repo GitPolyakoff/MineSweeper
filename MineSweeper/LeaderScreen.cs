@@ -23,12 +23,27 @@ namespace MineSweeper
             StartPosition = FormStartPosition.CenterScreen;
             this.DoubleBuffered = true;
             Time = "";
+            Player.ReadFile(GlobalData.LdrFileName, players);
+            FillListBox(players, LeaderlistBox);
+            FolderTextBox.Text = "Путь: " + GlobalData.LdrFileName;
+
             Player pl = new Player();
             pl.NickName = GlobalData.PlayerName;
-            players.Add(pl);
             pl.Time = GlobalData.PlayerTime;
-            FillListBox(players, LeaderlistBox);                              
-          
+            for (int i = 0; i < players.Count; i++)
+            {
+                if (players[i].NickName == pl.NickName)
+                {
+                    LeaderlistBox.Items.RemoveAt(i);
+                    players.RemoveAt(i);
+                    continue;
+                }
+            }
+            players.Add(pl);
+            LeaderlistBox.Items.Add($"{pl.NickName} | {pl.Time}");
+            Player.SaveFile(GlobalData.LdrFileName, players);
+            FillListBox(players, LeaderlistBox);
+
         }
         public string Time
         {
@@ -43,19 +58,27 @@ namespace MineSweeper
             mainForm.Show();
         }
 
-        
+
         protected void FillListBox(List<Player> players,
             ListBox listBox)
         {
             if (players == null || listBox == null)
                 return;
-
             listBox.Items.Clear();
-
-            foreach (Player pl in players)
-                listBox.Items.Add(pl.NickName + " | " + pl.Time);
+            //Сортировка таблицы лидеров
+            var PlayerTimeSorted = from pl in players
+                                   orderby pl.Time, pl.NickName
+                                   select pl;
+            // заполнение списка
+            int place = 0;
+            foreach (Player pl in PlayerTimeSorted)
+            {
+                place++;
+                listBox.Items.Add($"{place}. {pl.NickName} | {pl.Time}");
+            }
+                
         }
 
-        
+
     }
 }
