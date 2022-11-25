@@ -30,7 +30,7 @@ namespace MineSweeper
         private void InitializeComponent()
         {
             this.ColorComboBox = new System.Windows.Forms.ComboBox();
-            this.SelectedColorButton = new System.Windows.Forms.Button();
+            this.SaveSettingsButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.DifficultyComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -44,21 +44,21 @@ namespace MineSweeper
             "Голубой",
             "Жёлтый",
             "Системный"});
-            this.ColorComboBox.Location = new System.Drawing.Point(34, 55);
+            this.ColorComboBox.Location = new System.Drawing.Point(22, 55);
             this.ColorComboBox.Name = "ColorComboBox";
             this.ColorComboBox.Size = new System.Drawing.Size(135, 21);
             this.ColorComboBox.TabIndex = 2;
             // 
-            // SelectedColorButton
+            // SaveSettingsButton
             // 
-            this.SelectedColorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SelectedColorButton.Location = new System.Drawing.Point(220, 88);
-            this.SelectedColorButton.Name = "SelectedColorButton";
-            this.SelectedColorButton.Size = new System.Drawing.Size(135, 44);
-            this.SelectedColorButton.TabIndex = 3;
-            this.SelectedColorButton.Text = "Применить уровень сложности";
-            this.SelectedColorButton.UseVisualStyleBackColor = true;
-            this.SelectedColorButton.Click += new System.EventHandler(this.SelectedColorButton_Click);
+            this.SaveSettingsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SaveSettingsButton.Location = new System.Drawing.Point(22, 89);
+            this.SaveSettingsButton.Name = "SaveSettingsButton";
+            this.SaveSettingsButton.Size = new System.Drawing.Size(328, 37);
+            this.SaveSettingsButton.TabIndex = 3;
+            this.SaveSettingsButton.Text = "Применить настройки";
+            this.SaveSettingsButton.UseVisualStyleBackColor = true;
+            this.SaveSettingsButton.Click += new System.EventHandler(this.SaveSettingsButton_Click);
             // 
             // pictureBox1
             // 
@@ -78,7 +78,7 @@ namespace MineSweeper
             "Проще простого (поле 5х5)",
             "Любитель (поле 8х8)",
             "Опытный сапёр (поле 10х10)"});
-            this.DifficultyComboBox.Location = new System.Drawing.Point(34, 100);
+            this.DifficultyComboBox.Location = new System.Drawing.Point(172, 55);
             this.DifficultyComboBox.Name = "DifficultyComboBox";
             this.DifficultyComboBox.Size = new System.Drawing.Size(178, 21);
             this.DifficultyComboBox.TabIndex = 4;
@@ -89,7 +89,7 @@ namespace MineSweeper
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 371);
             this.Controls.Add(this.DifficultyComboBox);
-            this.Controls.Add(this.SelectedColorButton);
+            this.Controls.Add(this.SaveSettingsButton);
             this.Controls.Add(this.ColorComboBox);
             this.Controls.Add(this.pictureBox1);
             this.Name = "SettingsScreen";
@@ -103,7 +103,7 @@ namespace MineSweeper
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox ColorComboBox;
-        private System.Windows.Forms.Button SelectedColorButton;
+        private System.Windows.Forms.Button SaveSettingsButton;
         private System.Windows.Forms.ComboBox DifficultyComboBox;
     }
 }

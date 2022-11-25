@@ -30,10 +30,13 @@ namespace MineSweeper
             mainForm.Show();
         }
 
-        private void SelectedColorButton_Click(object sender, EventArgs e)
+        private void SaveSettingsButton_Click(object sender, EventArgs e)
         {
             string path = GlobalData.DifficultSetting;
+            string path1 = GlobalData.ColorForm;
+
             StreamWriter writer = null;
+            StreamWriter writer1 = null;
 
             switch (ColorComboBox.SelectedIndex)
             {
@@ -59,6 +62,10 @@ namespace MineSweeper
                 writer = new StreamWriter(path, false, Encoding.Default);
                 writer.WriteLine(DifficultyComboBox.SelectedIndex);
                 writer.Close();
+
+                writer1 = new StreamWriter(path1, false, Encoding.Default);
+                writer1.WriteLine(ColorComboBox.SelectedIndex);
+                writer1.Close();
             }
             catch (Exception ex)
             {
@@ -68,6 +75,9 @@ namespace MineSweeper
             {
                 if (writer != null)
                     writer.Dispose();
+
+                if (writer1 != null)
+                    writer1.Dispose();
             }
         }
     }

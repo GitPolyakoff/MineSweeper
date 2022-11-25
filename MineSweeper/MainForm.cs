@@ -14,13 +14,40 @@ namespace MineSweeper
     public partial class MainForm : Form
     {
 
-        Color color = Color.LightGray;
+        Color color;
         public MainForm()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;//убираем кнопки навигации сверху
             StartPosition = FormStartPosition.CenterScreen;
-            this.DoubleBuffered = true;                      
+            this.DoubleBuffered = true;
+            StreamReader sr1 = new StreamReader(GlobalData.ColorForm);
+            string str1;
+
+            while (!sr1.EndOfStream)
+            {
+                str1 = sr1.ReadLine();
+                //Проверка на пустую строку
+                if (string.IsNullOrEmpty(str1))
+                    continue;
+                if (0 == int.Parse(str1))
+                {
+                    color = Color.Red;
+                }
+                if (1 == int.Parse(str1))
+                {
+                    color = Color.SkyBlue;
+                }
+                if (2 == int.Parse(str1))
+                {
+                    color = Color.Yellow;
+                }
+                if (3 == int.Parse(str1))
+                {
+                    color = Color.White;
+                }
+            }
+            sr1.Close();
             this.BackColor = color;
         }
 

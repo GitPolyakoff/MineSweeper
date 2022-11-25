@@ -41,9 +41,9 @@ namespace MineSweeper
             this.ReplayPictureBox = new System.Windows.Forms.PictureBox();
             this.PausePictureBox = new System.Windows.Forms.PictureBox();
             this.PausePanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ContinueButton = new System.Windows.Forms.Button();
             this.ToMenuButton = new System.Windows.Forms.Button();
+            this.ContinueButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.GameMenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SmailPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReplayPictureBox)).BeginInit();
@@ -79,9 +79,9 @@ namespace MineSweeper
             this.TotalTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TotalTimeLabel.Location = new System.Drawing.Point(35, 54);
             this.TotalTimeLabel.Name = "TotalTimeLabel";
-            this.TotalTimeLabel.Size = new System.Drawing.Size(102, 20);
+            this.TotalTimeLabel.Size = new System.Drawing.Size(100, 20);
             this.TotalTimeLabel.TabIndex = 0;
-            this.TotalTimeLabel.Text = "Total Time: ";
+            this.TotalTimeLabel.Text = "Your Time: ";
             // 
             // GameMenuPanel
             // 
@@ -164,15 +164,16 @@ namespace MineSweeper
             this.PausePanel.Size = new System.Drawing.Size(221, 72);
             this.PausePanel.TabIndex = 4;
             // 
-            // label1
+            // ToMenuButton
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(14, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(194, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Игра приостановлена";
+            this.ToMenuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ToMenuButton.Location = new System.Drawing.Point(115, 41);
+            this.ToMenuButton.Name = "ToMenuButton";
+            this.ToMenuButton.Size = new System.Drawing.Size(100, 25);
+            this.ToMenuButton.TabIndex = 2;
+            this.ToMenuButton.Text = "Выйти в меню";
+            this.ToMenuButton.UseVisualStyleBackColor = true;
+            this.ToMenuButton.Click += new System.EventHandler(this.ToMenuButton_Click);
             // 
             // ContinueButton
             // 
@@ -185,16 +186,15 @@ namespace MineSweeper
             this.ContinueButton.UseVisualStyleBackColor = true;
             this.ContinueButton.Click += new System.EventHandler(this.ContinueButton_Click);
             // 
-            // ToMenuButton
+            // label1
             // 
-            this.ToMenuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ToMenuButton.Location = new System.Drawing.Point(115, 41);
-            this.ToMenuButton.Name = "ToMenuButton";
-            this.ToMenuButton.Size = new System.Drawing.Size(100, 25);
-            this.ToMenuButton.TabIndex = 2;
-            this.ToMenuButton.Text = "Выйти в меню";
-            this.ToMenuButton.UseVisualStyleBackColor = true;
-            this.ToMenuButton.Click += new System.EventHandler(this.ToMenuButton_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(14, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(194, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Игра приостановлена";
             // 
             // GameScreen
             // 

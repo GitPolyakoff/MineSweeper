@@ -18,6 +18,13 @@ namespace MineSweeper
         int bombs = 0;
         private readonly Stopwatch stopwatch = new Stopwatch();//создаём "секундомер", чтобы считать время от начала игры
 
+        Color color;
+
+        public Color Color
+        {
+            set { color = value; Invalidate(); }
+            get { return color; }
+        }
 
         public GameScreen()
         {
@@ -27,6 +34,31 @@ namespace MineSweeper
             StartPosition = FormStartPosition.CenterScreen;//открывает форму по центру монитора
             GameMenuPanel.Hide();
             PausePanel.Hide();
+
+            StreamReader sr1 = new StreamReader(GlobalData.ColorForm);
+            string str1;
+
+            while (!sr1.EndOfStream)
+            {
+                str1 = sr1.ReadLine();
+                //Проверка на пустую строку
+                if (string.IsNullOrEmpty(str1))
+                    continue;
+
+                if (0 == int.Parse(str1))
+                    color = Color.Red;
+
+                if (1 == int.Parse(str1))
+                    color = Color.SkyBlue;
+
+                if (2 == int.Parse(str1))
+                    color = Color.Yellow;
+
+                if (3 == int.Parse(str1))
+                    color = Color.White;
+            }
+            sr1.Close();
+            this.BackColor = color;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -116,10 +148,10 @@ namespace MineSweeper
                 clickedButton.isClickable = !clickedButton.isClickable;//если активна кнопка - делаем неактивной
 
                 if (!clickedButton.isClickable)
-                    clickedButton.BackColor = Color.OrangeRed;
+                    clickedButton.BackColor = Color.Tomato;
 
                 else
-                    clickedButton.BackColor = Color.LightGray;
+                    clickedButton.BackColor = color;
             }
             Victory();
         }
