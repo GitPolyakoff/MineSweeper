@@ -46,6 +46,7 @@ namespace MineSweeper
             this.NamePanel.Name = "NamePanel";
             this.NamePanel.Size = new System.Drawing.Size(200, 100);
             this.NamePanel.TabIndex = 2;
+            this.NamePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.NamePanel_Paint);
             // 
             // OKButton
             // 

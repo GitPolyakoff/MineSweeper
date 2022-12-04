@@ -55,6 +55,9 @@ namespace MineSweeper
                 case 3: //системный
                     this.BackColor = Color.White;
                     break;
+                case 4: //серый
+                    this.BackColor = Color.Gray;
+                    break;
             }
 
             try

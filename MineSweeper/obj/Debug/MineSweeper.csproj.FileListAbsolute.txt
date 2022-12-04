@@ -91,3 +91,17 @@ C:\Users\partn\Desktop\MimeSweeper_\MineSweeper\MineSweeper\obj\Debug\MineSweepe
 C:\Users\partn\Desktop\MimeSweeper_\MineSweeper\MineSweeper\obj\Debug\MineSweeper.csproj.CoreCompileInputs.cache
 C:\Users\partn\Desktop\MimeSweeper_\MineSweeper\MineSweeper\obj\Debug\MineSweeper.exe
 C:\Users\partn\Desktop\MimeSweeper_\MineSweeper\MineSweeper\obj\Debug\MineSweeper.pdb
+E:\fish\MineSweeper-main\MineSweeper-main\MineSweeper\bin\Debug\MineSweeper.exe.config
+E:\fish\MineSweeper-main\MineSweeper-main\MineSweeper\bin\Debug\MineSweeper.exe
+E:\fish\MineSweeper-main\MineSweeper-main\MineSweeper\bin\Debug\MineSweeper.pdb
+E:\fish\MineSweeper-main\MineSweeper-main\MineSweeper\obj\Debug\MineSweeper.csproj.AssemblyReference.cache
+E:\fish\MineSweeper-main\MineSweeper-main\MineSweeper\obj\Debug\MineSweeper.GameScreen.resources
+E:\fish\MineSweeper-main\MineSweeper-main\MineSweeper\obj\Debug\MineSweeper.LeaderScreen.resources
+E:\fish\MineSweeper-main\MineSweeper-main\MineSweeper\obj\Debug\MineSweeper.MainForm.resources
+E:\fish\MineSweeper-main\MineSweeper-main\MineSweeper\obj\Debug\MineSweeper.NameForm.resources
+E:\fish\MineSweeper-main\MineSweeper-main\MineSweeper\obj\Debug\MineSweeper.Properties.Resources.resources
+E:\fish\MineSweeper-main\MineSweeper-main\MineSweeper\obj\Debug\MineSweeper.SettingsScreen.resources
+E:\fish\MineSweeper-main\MineSweeper-main\MineSweeper\obj\Debug\MineSweeper.csproj.GenerateResource.cache
+E:\fish\MineSweeper-main\MineSweeper-main\MineSweeper\obj\Debug\MineSweeper.csproj.CoreCompileInputs.cache
+E:\fish\MineSweeper-main\MineSweeper-main\MineSweeper\obj\Debug\MineSweeper.exe
+E:\fish\MineSweeper-main\MineSweeper-main\MineSweeper\obj\Debug\MineSweeper.pdb

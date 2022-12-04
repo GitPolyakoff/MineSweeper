@@ -118,6 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="S_T_A_L_K_E_R__Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\S.T.A.L.K.E.R._Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Бомба" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Бомба.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Домой1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Домой1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -141,5 +147,8 @@
   </data>
   <data name="Смайл3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Смайл4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Флажок1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Флажок1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

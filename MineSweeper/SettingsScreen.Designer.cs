@@ -43,7 +43,8 @@ namespace MineSweeper
             "Красный",
             "Голубой",
             "Жёлтый",
-            "Системный"});
+            "Системный",
+            "Серый"});
             this.ColorComboBox.Location = new System.Drawing.Point(22, 55);
             this.ColorComboBox.Name = "ColorComboBox";
             this.ColorComboBox.Size = new System.Drawing.Size(135, 21);

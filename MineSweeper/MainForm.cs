@@ -46,6 +46,11 @@ namespace MineSweeper
                 {
                     color = Color.White;
                 }
+                if (4 == int.Parse(str1))
+                {
+                    color = Color.Gray;
+                  
+                }
             }
             sr1.Close();
             this.BackColor = color;
@@ -78,6 +83,18 @@ namespace MineSweeper
             SettingsScreen settings = new SettingsScreen();
             settings.Show();
             settings.BackColor = color;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Properties.Resources.S_T_A_L_K_E_R__Logo;
+            button_newGame.Text = "На охоту";
+            button_newGame.BackColor = Color.Green;
+            button_leader.Text = "Легендарные сталкеры";
+            button_leader.BackColor = Color.Green;
+            button_exit.Text = "Слабак ты меченный";
+            button_exit.BackColor = Color.Red;
+            BackColor = Color.DarkGray;
         }
     }
 }

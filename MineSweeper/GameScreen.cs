@@ -56,6 +56,10 @@ namespace MineSweeper
 
                 if (3 == int.Parse(str1))
                     color = Color.White;
+               
+                if (4 == int.Parse(str1))
+                    color = Color.Gray;
+          
             }
             sr1.Close();
             this.BackColor = color;
@@ -148,9 +152,11 @@ namespace MineSweeper
                 clickedButton.isClickable = !clickedButton.isClickable;//если активна кнопка - делаем неактивной
 
                 if (!clickedButton.isClickable)
-                    clickedButton.BackColor = Color.Tomato;
-
+                {
+                    clickedButton.Image = Properties.Resources.Флажок1;
+                }
                 else
+                    clickedButton.Image = null;
                     clickedButton.BackColor = color;
             }
             Victory();
@@ -161,12 +167,21 @@ namespace MineSweeper
             //окрываем при попадании на бомбу все бомбы
             foreach (FieldButton button in field)
             {
-                if (button.isBomb)
+                if (button.isBomb && color == Color.White)
                 {
-                    button.BackColor = Color.Black;
+                    button.BackColor = Color.White;
+                    button.Image = Properties.Resources.Бомба;
                     button.isClickable = false;
                 }
+               else if (button.isBomb)
+                {
+                    button.BackColor = Color.Black;
+                    button.Image = Properties.Resources.Бомба;
+                    button.isClickable = false;
+                }
+
                 else
+                    button.Image = null;
                     button.Enabled = false;//делаем неактивными все кнопки при проигрыше
             }
             TotalTimeLabel.Text += time_label.Text.ToString();
@@ -177,7 +192,7 @@ namespace MineSweeper
             PausePictureBox.Hide();
             ReplayPictureBox.Hide();
         }
-
+        
         void EmptyFieldButtonClick(FieldButton clickedButton)//открытие пустых
         {
             for (int y = 0; y < height; y++)

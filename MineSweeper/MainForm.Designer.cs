@@ -46,7 +46,7 @@ namespace MineSweeper
             // button_newGame
             // 
             this.button_newGame.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button_newGame.Location = new System.Drawing.Point(130, 103);
+            this.button_newGame.Location = new System.Drawing.Point(130, 121);
             this.button_newGame.Name = "button_newGame";
             this.button_newGame.Size = new System.Drawing.Size(104, 53);
             this.button_newGame.TabIndex = 0;
@@ -57,7 +57,7 @@ namespace MineSweeper
             // button_exit
             // 
             this.button_exit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button_exit.Location = new System.Drawing.Point(129, 220);
+            this.button_exit.Location = new System.Drawing.Point(129, 238);
             this.button_exit.Name = "button_exit";
             this.button_exit.Size = new System.Drawing.Size(106, 52);
             this.button_exit.TabIndex = 1;
@@ -68,7 +68,7 @@ namespace MineSweeper
             // button_leader
             // 
             this.button_leader.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button_leader.Location = new System.Drawing.Point(129, 162);
+            this.button_leader.Location = new System.Drawing.Point(129, 180);
             this.button_leader.Name = "button_leader";
             this.button_leader.Size = new System.Drawing.Size(106, 52);
             this.button_leader.TabIndex = 3;
@@ -80,12 +80,13 @@ namespace MineSweeper
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::MineSweeper.Properties.Resources.Меню1;
-            this.pictureBox1.Location = new System.Drawing.Point(43, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(49, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(278, 94);
+            this.pictureBox1.Size = new System.Drawing.Size(266, 112);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // picture_setting
             // 
@@ -113,7 +114,7 @@ namespace MineSweeper
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -125,15 +126,16 @@ namespace MineSweeper
             // nameForm1
             // 
             this.nameForm1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nameForm1.Location = new System.Drawing.Point(79, 278);
+            this.nameForm1.Color = System.Drawing.Color.Empty;
+            this.nameForm1.Location = new System.Drawing.Point(74, 296);
             this.nameForm1.Name = "nameForm1";
-            this.nameForm1.Size = new System.Drawing.Size(206, 105);
+            this.nameForm1.Size = new System.Drawing.Size(215, 89);
             this.nameForm1.TabIndex = 5;
             // 
             // Settings_pictureBox
             // 
             this.Settings_pictureBox.Image = global::MineSweeper.Properties.Resources.Настройка1;
-            this.Settings_pictureBox.Location = new System.Drawing.Point(3, 389);
+            this.Settings_pictureBox.Location = new System.Drawing.Point(3, 391);
             this.Settings_pictureBox.Name = "Settings_pictureBox";
             this.Settings_pictureBox.Size = new System.Drawing.Size(39, 36);
             this.Settings_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

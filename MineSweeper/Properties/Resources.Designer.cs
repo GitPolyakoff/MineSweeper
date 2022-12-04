@@ -63,6 +63,26 @@ namespace MineSweeper.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap S_T_A_L_K_E_R__Logo {
+            get {
+                object obj = ResourceManager.GetObject("S_T_A_L_K_E_R__Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Бомба {
+            get {
+                object obj = ResourceManager.GetObject("Бомба", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Домой1 {
             get {
                 object obj = ResourceManager.GetObject("Домой1", resourceCulture);
@@ -136,6 +156,16 @@ namespace MineSweeper.Properties {
         internal static System.Drawing.Bitmap Смайл3 {
             get {
                 object obj = ResourceManager.GetObject("Смайл3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Флажок1 {
+            get {
+                object obj = ResourceManager.GetObject("Флажок1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
