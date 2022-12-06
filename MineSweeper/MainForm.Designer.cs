@@ -32,15 +32,15 @@ namespace MineSweeper
             this.button_newGame = new System.Windows.Forms.Button();
             this.button_exit = new System.Windows.Forms.Button();
             this.button_leader = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.picture_setting = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.nameForm1 = new MineSweeper.NameForm();
             this.Settings_pictureBox = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picture_setting)).BeginInit();
+            this.picture_setting = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Settings_pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_setting)).BeginInit();
             this.SuspendLayout();
             // 
             // button_newGame
@@ -76,30 +76,6 @@ namespace MineSweeper
             this.button_leader.UseVisualStyleBackColor = true;
             this.button_leader.Click += new System.EventHandler(this.button_leader_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::MineSweeper.Properties.Resources.Меню1;
-            this.pictureBox1.Location = new System.Drawing.Point(49, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(266, 112);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // picture_setting
-            // 
-            this.picture_setting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.picture_setting.Enabled = false;
-            this.picture_setting.Image = global::MineSweeper.Properties.Resources.Настройка1;
-            this.picture_setting.Location = new System.Drawing.Point(12, 69);
-            this.picture_setting.Name = "picture_setting";
-            this.picture_setting.Size = new System.Drawing.Size(30, 30);
-            this.picture_setting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picture_setting.TabIndex = 2;
-            this.picture_setting.TabStop = false;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
@@ -123,6 +99,18 @@ namespace MineSweeper
             this.tableLayoutPanel1.Size = new System.Drawing.Size(364, 428);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = global::MineSweeper.Properties.Resources.Меню1;
+            this.pictureBox1.Location = new System.Drawing.Point(49, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(266, 112);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // nameForm1
             // 
             this.nameForm1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -143,6 +131,18 @@ namespace MineSweeper
             this.Settings_pictureBox.TabStop = false;
             this.Settings_pictureBox.Click += new System.EventHandler(this.Settings_pictureBox_Click);
             // 
+            // picture_setting
+            // 
+            this.picture_setting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.picture_setting.Enabled = false;
+            this.picture_setting.Image = global::MineSweeper.Properties.Resources.Настройка1;
+            this.picture_setting.Location = new System.Drawing.Point(12, 69);
+            this.picture_setting.Name = "picture_setting";
+            this.picture_setting.Size = new System.Drawing.Size(30, 30);
+            this.picture_setting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picture_setting.TabIndex = 2;
+            this.picture_setting.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,10 +156,12 @@ namespace MineSweeper
             this.MinimumSize = new System.Drawing.Size(380, 410);
             this.Name = "MainForm";
             this.Text = "MainForm";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picture_setting)).EndInit();
+            this.Load += new System.EventHandler(this.MainForm_Load_1);
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Settings_pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_setting)).EndInit();
             this.ResumeLayout(false);
 
         }

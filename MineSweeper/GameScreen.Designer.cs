@@ -211,6 +211,7 @@ namespace MineSweeper
             this.Name = "GameScreen";
             this.Text = "GameScreen";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.GameScreen_Shown);
             this.GameMenuPanel.ResumeLayout(false);
             this.GameMenuPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SmailPictureBox)).EndInit();

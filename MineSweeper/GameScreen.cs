@@ -4,6 +4,9 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
+using System.IO.Compression;
+using System.Media;
+using System.Threading;
 
 namespace MineSweeper
 {
@@ -25,6 +28,7 @@ namespace MineSweeper
             set { color = value; Invalidate(); }
             get { return color; }
         }
+
 
         public GameScreen()
         {
@@ -63,16 +67,20 @@ namespace MineSweeper
             }
             sr1.Close();
             this.BackColor = color;
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+           
+         
             this.FormBorderStyle = FormBorderStyle.None;//убираем кнопки навигации сверху
 
             StreamReader sr = new StreamReader(GlobalData.DifficultSetting);
             string str;
             while (!sr.EndOfStream)
             {
+               
                 str = sr.ReadLine();
                 if (string.IsNullOrEmpty(str))
                     continue;
@@ -118,10 +126,14 @@ namespace MineSweeper
                     Controls.Add(newButton);
                     newButton.MouseUp += new MouseEventHandler(FieldButtonClick);//"прицепляем" созданную нами ф-ю на событие MouseUp
                     field[x, y] = newButton;
+                  
                 }
             }
-        }
+            SoundPlayer SPNapr = new SoundPlayer(Properties.Resources.NAPRECHen);
+            SPNapr.Play();
 
+        }
+      
         void FieldButtonClick(object sender, MouseEventArgs e)//функция нажатия на кнопку
         {
             FieldButton clickedButton = (FieldButton)sender;//явное преобразование объекта object в FieldButton
@@ -164,6 +176,8 @@ namespace MineSweeper
 
         void Detonation()
         {
+            SoundPlayer SPDet = new SoundPlayer(Properties.Resources.Finish);
+            SPDet.Play();
             //окрываем при попадании на бомбу все бомбы
             foreach (FieldButton button in field)
             {
@@ -297,6 +311,8 @@ namespace MineSweeper
                 }
                 PausePictureBox.Hide();
                 ReplayPictureBox.Hide();
+                SoundPlayer SPFinishGood = new SoundPlayer(Properties.Resources.Finish_Good);
+                SPFinishGood.Play();
             }
         }
 
@@ -312,6 +328,8 @@ namespace MineSweeper
             this.Hide();
             MainForm mainForm = new MainForm();
             mainForm.Show();
+            SoundPlayer SPDone = new SoundPlayer(Properties.Resources.DONE);
+            SPDone.Play();
         }
 
         private void GameTimer_Tick(object sender, EventArgs e)
@@ -329,18 +347,23 @@ namespace MineSweeper
         private void PausePictureBox_Click(object sender, EventArgs e)
         {
             PausePanel.Show();
+            SoundPlayer SPDone = new SoundPlayer(Properties.Resources.DONE);
+            SPDone.Play();
             stopwatch.Stop();
             foreach (FieldButton button in field)
             {
                 button.isClickable = false;
                 button.Enabled = false;
                 ReplayPictureBox.Hide();
+                
             }
         }
 
         private void ContinueButton_Click(object sender, EventArgs e)
         {
             PausePanel.Hide();
+            SoundPlayer SPDone = new SoundPlayer(Properties.Resources.DONE);
+            SPDone.Play();
             stopwatch.Start();
             ReplayPictureBox.Show();
             foreach (FieldButton button in field)
@@ -355,6 +378,15 @@ namespace MineSweeper
             this.Hide();
             MainForm mainForm = new MainForm();
             mainForm.Show();
+            SoundPlayer SPDone = new SoundPlayer(Properties.Resources.DONE);
+            SPDone.Play();
+        }
+
+        private void GameScreen_Shown(object sender, EventArgs e)
+        {
+           // Thread.Sleep(700);
+            SoundPlayer SPNapr = new SoundPlayer(Properties.Resources.NAPRECHen);
+            SPNapr.Play();
         }
     }
 

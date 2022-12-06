@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -145,7 +160,37 @@
   <ItemGroup>
     <None Include="Resources\Флажок1.png" />
     <None Include="Resources\S.T.A.L.K.E.R._Logo.png" />
+    <None Include="Resources\DONE.WAV" />
+    <None Include="Resources\ESC.WAV" />
+    <None Include="Resources\GO!.WAV" />
+    <None Include="Resources\PUPXPLOD.WAV" />
+    <None Include="Resources\THECLAP.WAV" />
+    <None Include="Resources\RACECPLT.WAV" />
+    <None Include="Resources\export_ofoct.com.mp3" />
+    <None Include="Resources\export_ofoct.com.wav" />
+    <None Include="Resources\mix_00s %28audio-joiner.com%29.wav" />
+    <None Include="Resources\FScream1.WAV" />
+    <None Include="Resources\PUPXPLOD_1_1_.wav" />
+    <None Include="Resources\OUTOTIM2_1_1_.wav" />
+    <None Include="Resources\MC-Пох-Банька-парилка-_минус___MP3Ball.ru_-_1_.wav" />
+    <None Include="Resources\MC Пох - Банька парилка %28минус%29_%28MP3Ball.ru%29 %281%29.mp3" />
+    <None Include="Resources\MEnu.wav" />
+    <None Include="Resources\SWINGOUT.WAV" />
+    <None Include="Resources\_pvxzC2Dvu1UPLea2pjOONeMROvnN27qegmhC_ulT3hP5fTDMrlcRHxX31a2IKCy6xskZCHB.jpg" />
+    <None Include="Resources\Alexey_Omelchuk_-_Smell_the_Gunpowder_73301773-_1_ %281%29.wav" />
     <Content Include="Resources\Бомба.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

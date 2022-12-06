@@ -49,6 +49,7 @@ namespace MineSweeper
             this.ColorComboBox.Name = "ColorComboBox";
             this.ColorComboBox.Size = new System.Drawing.Size(135, 21);
             this.ColorComboBox.TabIndex = 2;
+            this.ColorComboBox.SelectedIndexChanged += new System.EventHandler(this.ColorComboBox_SelectedIndexChanged);
             // 
             // SaveSettingsButton
             // 
@@ -83,6 +84,7 @@ namespace MineSweeper
             this.DifficultyComboBox.Name = "DifficultyComboBox";
             this.DifficultyComboBox.Size = new System.Drawing.Size(178, 21);
             this.DifficultyComboBox.TabIndex = 4;
+            this.DifficultyComboBox.SelectionChangeCommitted += new System.EventHandler(this.SaveSettingsButton_Click);
             // 
             // SettingsScreen
             // 

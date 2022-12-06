@@ -105,3 +105,17 @@ E:\fish\MineSweeper-main\MineSweeper-main\MineSweeper\obj\Debug\MineSweeper.cspr
 E:\fish\MineSweeper-main\MineSweeper-main\MineSweeper\obj\Debug\MineSweeper.csproj.CoreCompileInputs.cache
 E:\fish\MineSweeper-main\MineSweeper-main\MineSweeper\obj\Debug\MineSweeper.exe
 E:\fish\MineSweeper-main\MineSweeper-main\MineSweeper\obj\Debug\MineSweeper.pdb
+C:\Users\igorc\OneDrive\Рабочий стол\Программирования\MineSweeper\MineSweeper\bin\Debug\MineSweeper.exe.config
+C:\Users\igorc\OneDrive\Рабочий стол\Программирования\MineSweeper\MineSweeper\bin\Debug\MineSweeper.exe
+C:\Users\igorc\OneDrive\Рабочий стол\Программирования\MineSweeper\MineSweeper\bin\Debug\MineSweeper.pdb
+C:\Users\igorc\OneDrive\Рабочий стол\Программирования\MineSweeper\MineSweeper\obj\Debug\MineSweeper.csprojAssemblyReference.cache
+C:\Users\igorc\OneDrive\Рабочий стол\Программирования\MineSweeper\MineSweeper\obj\Debug\MineSweeper.GameScreen.resources
+C:\Users\igorc\OneDrive\Рабочий стол\Программирования\MineSweeper\MineSweeper\obj\Debug\MineSweeper.LeaderScreen.resources
+C:\Users\igorc\OneDrive\Рабочий стол\Программирования\MineSweeper\MineSweeper\obj\Debug\MineSweeper.MainForm.resources
+C:\Users\igorc\OneDrive\Рабочий стол\Программирования\MineSweeper\MineSweeper\obj\Debug\MineSweeper.NameForm.resources
+C:\Users\igorc\OneDrive\Рабочий стол\Программирования\MineSweeper\MineSweeper\obj\Debug\MineSweeper.Properties.Resources.resources
+C:\Users\igorc\OneDrive\Рабочий стол\Программирования\MineSweeper\MineSweeper\obj\Debug\MineSweeper.SettingsScreen.resources
+C:\Users\igorc\OneDrive\Рабочий стол\Программирования\MineSweeper\MineSweeper\obj\Debug\MineSweeper.csproj.GenerateResource.cache
+C:\Users\igorc\OneDrive\Рабочий стол\Программирования\MineSweeper\MineSweeper\obj\Debug\MineSweeper.csproj.CoreCompileInputs.cache
+C:\Users\igorc\OneDrive\Рабочий стол\Программирования\MineSweeper\MineSweeper\obj\Debug\MineSweeper.exe
+C:\Users\igorc\OneDrive\Рабочий стол\Программирования\MineSweeper\MineSweeper\obj\Debug\MineSweeper.pdb

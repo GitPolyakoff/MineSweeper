@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Media;
 
 namespace MineSweeper
 {
@@ -27,8 +28,16 @@ namespace MineSweeper
 
         private void OKButton_Click(object sender, EventArgs e)
         {
+            
             GlobalData.PlayerName = NameTextBox.Text;
+            if (NameTextBox.Text != String.Empty)
+            {
+                SoundPlayer SPDone = new SoundPlayer(Properties.Resources.DONE);
+                SPDone.Play();
+            }
+           
         }
+
 
         private void NamePanel_Paint(object sender, PaintEventArgs e)
         {

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Media;
 
 namespace MineSweeper
 {
@@ -28,10 +29,14 @@ namespace MineSweeper
             MainForm mainForm = new MainForm();
 
             mainForm.Show();
+            SoundPlayer SPEsc = new SoundPlayer(Properties.Resources.ESC);
+            SPEsc.Play();
         }
 
         private void SaveSettingsButton_Click(object sender, EventArgs e)
         {
+            SoundPlayer SPDone = new SoundPlayer(Properties.Resources.DONE);
+            SPDone.Play();
             string path = GlobalData.DifficultSetting;
             string path1 = GlobalData.ColorForm;
 
@@ -83,5 +88,21 @@ namespace MineSweeper
                     writer1.Dispose();
             }
         }
+
+  
+
+        private void ColorComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SoundPlayer SPDone = new SoundPlayer(Properties.Resources.DONE);
+            SPDone.Play();
+        }
+
+        private void DifficultyComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            SoundPlayer SPDone = new SoundPlayer(Properties.Resources.DONE);
+            SPDone.Play();
+        }
+
+    
     }
 }

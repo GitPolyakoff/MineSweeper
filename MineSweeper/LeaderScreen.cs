@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Media;
 
 namespace MineSweeper
 {
@@ -56,6 +57,8 @@ namespace MineSweeper
             this.Hide();
             MainForm mainForm = new MainForm();
             mainForm.Show();
+            SoundPlayer SPEsc = new SoundPlayer(Properties.Resources.ESC);
+            SPEsc.Play();
         }
 
 
