@@ -68,7 +68,6 @@ C:\Users\spark\Documents\GitHub\MineSweeper\MineSweeper\bin\Debug\MineSweeper.ex
 C:\Users\spark\Documents\GitHub\MineSweeper\MineSweeper\bin\Debug\MineSweeper.pdb
 C:\Users\spark\Documents\GitHub\MineSweeper\MineSweeper\obj\Debug\MineSweeper.csproj.AssemblyReference.cache
 C:\Users\spark\Documents\GitHub\MineSweeper\MineSweeper\obj\Debug\MineSweeper.GameScreen.resources
-C:\Users\spark\Documents\GitHub\MineSweeper\MineSweeper\obj\Debug\MineSweeper.LeaderScreen.resources
 C:\Users\spark\Documents\GitHub\MineSweeper\MineSweeper\obj\Debug\MineSweeper.MainForm.resources
 C:\Users\spark\Documents\GitHub\MineSweeper\MineSweeper\obj\Debug\MineSweeper.NameForm.resources
 C:\Users\spark\Documents\GitHub\MineSweeper\MineSweeper\obj\Debug\MineSweeper.Properties.Resources.resources
@@ -119,3 +118,6 @@ C:\Users\igorc\OneDrive\Рабочий стол\Программирования
 C:\Users\igorc\OneDrive\Рабочий стол\Программирования\MineSweeper\MineSweeper\obj\Debug\MineSweeper.csproj.CoreCompileInputs.cache
 C:\Users\igorc\OneDrive\Рабочий стол\Программирования\MineSweeper\MineSweeper\obj\Debug\MineSweeper.exe
 C:\Users\igorc\OneDrive\Рабочий стол\Программирования\MineSweeper\MineSweeper\obj\Debug\MineSweeper.pdb
+C:\Users\spark\Documents\GitHub\MineSweeper\MineSweeper\obj\Debug\MineSweeper.LeaderScreenMedium.resources
+C:\Users\spark\Documents\GitHub\MineSweeper\MineSweeper\obj\Debug\MineSweeper.LeaderScreenEasy.resources
+C:\Users\spark\Documents\GitHub\MineSweeper\MineSweeper\obj\Debug\MineSweeper.LeaderScreenHard.resources

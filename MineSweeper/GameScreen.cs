@@ -303,7 +303,30 @@ namespace MineSweeper
                 WinLoseLabel.Text = "Вы победили!!!";
                 SmailPictureBox.Image = new Bitmap(Properties.Resources.Смайл3);
                 GameMenuPanel.Show();
-                GlobalData.PlayerTime = stopwatch.Elapsed.ToString("mm\\:ss");
+
+                StreamReader sr = new StreamReader(GlobalData.DifficultSetting); //Запись времени в зависимости от уровня сложности
+                string str;
+                while (!sr.EndOfStream)
+                {
+
+                    str = sr.ReadLine();
+                    if (string.IsNullOrEmpty(str))
+                        continue;
+                    if (0 == int.Parse(str))
+                    {
+                        GlobalData.PlayerTimeEasy = stopwatch.Elapsed.ToString("mm\\:ss");
+                    }
+                    if (1 == int.Parse(str))
+                    {
+                        GlobalData.PlayerTimeMedium = stopwatch.Elapsed.ToString("mm\\:ss");
+                    }
+                    if (2 == int.Parse(str))
+                    {
+                        GlobalData.PlayerTimeHard = stopwatch.Elapsed.ToString("mm\\:ss");
+                    }
+                }
+                sr.Close();
+                
                 foreach (FieldButton button in field)
                 {
                     button.isClickable = false;//делаем "ненажимаемыми" все кнопки при победе

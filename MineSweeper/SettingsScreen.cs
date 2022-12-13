@@ -89,8 +89,6 @@ namespace MineSweeper
             }
         }
 
-  
-
         private void ColorComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             SoundPlayer SPDone = new SoundPlayer(Properties.Resources.DONE);
@@ -102,7 +100,5 @@ namespace MineSweeper
             SoundPlayer SPDone = new SoundPlayer(Properties.Resources.DONE);
             SPDone.Play();
         }
-
-    
     }
 }

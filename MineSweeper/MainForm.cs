@@ -16,19 +16,17 @@ namespace MineSweeper
     public partial class MainForm : Form
     {
 
-
         Color color;
+
         public MainForm()
-        {
-          
+        {         
             InitializeComponent();
           
             this.FormBorderStyle = FormBorderStyle.None;//убираем кнопки навигации сверху
             StartPosition = FormStartPosition.CenterScreen;
             this.DoubleBuffered = true;
             StreamReader sr1 = new StreamReader(GlobalData.ColorForm);
-            string str1;
-
+            string str1;           
             while (!sr1.EndOfStream)
             {
                 str1 = sr1.ReadLine();
@@ -59,7 +57,36 @@ namespace MineSweeper
             }
             sr1.Close();
             this.BackColor = color;
-        
+            
+            StreamReader sr = new StreamReader(GlobalData.DifficultSetting);
+            string str;
+            while (!sr.EndOfStream)
+            {
+
+                str = sr.ReadLine();
+                if (string.IsNullOrEmpty(str))
+                    continue;
+                if (0 == int.Parse(str))
+                {                   
+                    DifficultyLabel.Text = "Сложность игры: Easy";
+                    DifficultyLabel.BackColor = Color.Gray;
+                    DifficultyLabel.ForeColor = Color.GreenYellow;
+                }
+                if (1 == int.Parse(str))
+                {
+                    DifficultyLabel.Text = "Сложность игры: Medium";
+                    DifficultyLabel.BackColor = Color.Gray;
+                    DifficultyLabel.ForeColor = Color.Yellow;
+                }
+                if (2 == int.Parse(str))
+                {
+                    DifficultyLabel.Text = "Сложность игры: Hard";
+                    DifficultyLabel.BackColor = Color.Gray;
+                    DifficultyLabel.ForeColor = Color.Red;
+                }
+            }
+            sr.Close();
+
         }
 
         private void button_newGame_Click(object sender, EventArgs e)
@@ -87,9 +114,38 @@ namespace MineSweeper
         private void button_leader_Click(object sender, EventArgs e)
         {
             this.Hide();
-            LeaderScreen leader = new LeaderScreen();
-            leader.Show();
-            leader.BackColor = color;
+            
+            StreamReader sr = new StreamReader(GlobalData.DifficultSetting); 
+            string str;
+            while (!sr.EndOfStream)
+            {
+
+                str = sr.ReadLine();
+                if (string.IsNullOrEmpty(str))
+                    continue;
+                if (0 == int.Parse(str))
+                {
+                    LeaderScreenEasy leader = new LeaderScreenEasy();
+                    leader.Show();
+                    leader.BackColor = color;
+                    DifficultyLabel.Text = "Easy";
+                    
+                }
+                if (1 == int.Parse(str))
+                {
+                    LeaderScreenMedium leader = new LeaderScreenMedium();
+                    leader.Show();
+                    leader.BackColor = color;
+                }
+                if (2 == int.Parse(str))
+                {
+                    LeaderScreenHard leader = new LeaderScreenHard();
+                    leader.Show();
+                    leader.BackColor = color;
+                }
+            }
+            sr.Close();
+            
             SoundPlayer SPDone = new SoundPlayer(Properties.Resources.DONE);
             SPDone.Play();
         }

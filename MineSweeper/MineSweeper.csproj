@@ -68,11 +68,23 @@
       <DependentUpon>GameScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalData.cs" />
-    <Compile Include="LeaderScreen.cs">
+    <Compile Include="LeaderScreenEasy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LeaderScreen.Designer.cs">
-      <DependentUpon>LeaderScreen.cs</DependentUpon>
+    <Compile Include="LeaderScreenEasy.Designer.cs">
+      <DependentUpon>LeaderScreenEasy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LeaderScreenHard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LeaderScreenHard.Designer.cs">
+      <DependentUpon>LeaderScreenHard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LeaderScreenMedium.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LeaderScreenMedium.Designer.cs">
+      <DependentUpon>LeaderScreenMedium.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -103,8 +115,14 @@
     <EmbeddedResource Include="GameScreen.resx">
       <DependentUpon>GameScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LeaderScreen.resx">
-      <DependentUpon>LeaderScreen.cs</DependentUpon>
+    <EmbeddedResource Include="LeaderScreenEasy.resx">
+      <DependentUpon>LeaderScreenEasy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LeaderScreenHard.resx">
+      <DependentUpon>LeaderScreenHard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LeaderScreenMedium.resx">
+      <DependentUpon>LeaderScreenMedium.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
