@@ -68,7 +68,7 @@ namespace MineSweeper
                 }
                 if (4 == int.Parse(str1))
                 {
-                    color = Color.Gray;
+                    color = Color.Honeydew;
                   
                 }
             }
@@ -101,6 +101,7 @@ namespace MineSweeper
                     DifficultyLabel.BackColor = Color.Gray;
                     DifficultyLabel.ForeColor = Color.Red;
                 }
+                
             }
             sr.Close();
 
@@ -160,6 +161,11 @@ namespace MineSweeper
                     leader.Show();
                     leader.BackColor = color;
                 }
+                else
+                    MessageBox.Show("ошибка не выбрана сложность!");
+                SettingsScreen settings = new SettingsScreen();
+                settings.Show();
+                settings.BackColor = color;
             }
             sr.Close();
             

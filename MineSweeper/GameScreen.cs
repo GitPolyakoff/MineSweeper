@@ -62,7 +62,7 @@ namespace MineSweeper
                     color = Color.White;
                
                 if (4 == int.Parse(str1))
-                    color = Color.Gray;
+                    color = Color.Honeydew;
           
             }
             sr1.Close();
