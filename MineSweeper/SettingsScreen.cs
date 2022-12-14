@@ -21,13 +21,16 @@ namespace MineSweeper
             this.FormBorderStyle = FormBorderStyle.None;//убираем кнопки навигации сверху
             StartPosition = FormStartPosition.CenterScreen;
             this.DoubleBuffered = true;
+            SaveSettingsButton.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular,
+                    System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            SaveSettingsButton.BackColor = Color.Gray;
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Hide();
             MainForm mainForm = new MainForm();
-
             mainForm.Show();
             SoundPlayer SPEsc = new SoundPlayer(Properties.Resources.ESC);
             SPEsc.Play();
@@ -35,6 +38,7 @@ namespace MineSweeper
 
         private void SaveSettingsButton_Click(object sender, EventArgs e)
         {
+          
             SoundPlayer SPDone = new SoundPlayer(Properties.Resources.DONE);
             SPDone.Play();
             string path = GlobalData.DifficultSetting;
@@ -50,11 +54,11 @@ namespace MineSweeper
                     break;
 
                 case 1: //голубой
-                    this.BackColor = Color.SkyBlue;
+                    this.BackColor = Color.DarkGoldenrod;
                     break;
 
                 case 2: //жёлтый
-                    this.BackColor = Color.Yellow;
+                    this.BackColor = Color.DarkCyan;
                     break;
 
                 case 3: //системный
@@ -100,5 +104,6 @@ namespace MineSweeper
             SoundPlayer SPDone = new SoundPlayer(Properties.Resources.DONE);
             SPDone.Play();
         }
+        
     }
 }

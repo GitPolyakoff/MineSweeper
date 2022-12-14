@@ -176,6 +176,8 @@
     <None Include="Resources\Перезагрузка.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Сталкер-Бар-100-Рентген-_mp3-2020.com_.wav" />
+    <None Include="Resources\Флажок синий.png" />
     <None Include="Resources\Флажок1.png" />
     <None Include="Resources\S.T.A.L.K.E.R._Logo.png" />
     <None Include="Resources\DONE.WAV" />
