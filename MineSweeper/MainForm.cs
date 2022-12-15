@@ -161,11 +161,13 @@ namespace MineSweeper
                     leader.Show();
                     leader.BackColor = color;
                 }
-                else
+                else if (DifficultyLabel.Text == "Выберите уровень сложности!!!!")
+                {
                     MessageBox.Show("ошибка не выбрана сложность!");
-                SettingsScreen settings = new SettingsScreen();
-                settings.Show();
-                settings.BackColor = color;
+                    SettingsScreen settings = new SettingsScreen();
+                    settings.Show();
+                    settings.BackColor = color;
+                }
             }
             sr.Close();
             
