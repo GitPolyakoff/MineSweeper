@@ -41,10 +41,10 @@ namespace MineSweeper
             this.ColorComboBox.FormattingEnabled = true;
             this.ColorComboBox.Items.AddRange(new object[] {
             "Красный",
-            "Голубой",
-            "Жёлтый",
-            "Системный",
-            "Серый"});
+            "Тёмно-золотой",
+            "Темно-голубой",
+            "Классический(Системный)",
+            "Медовый"});
             this.ColorComboBox.Location = new System.Drawing.Point(22, 55);
             this.ColorComboBox.Name = "ColorComboBox";
             this.ColorComboBox.Size = new System.Drawing.Size(135, 21);
@@ -53,13 +53,16 @@ namespace MineSweeper
             // 
             // SaveSettingsButton
             // 
+            this.SaveSettingsButton.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.SaveSettingsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.SaveSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.SaveSettingsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SaveSettingsButton.Location = new System.Drawing.Point(22, 89);
             this.SaveSettingsButton.Name = "SaveSettingsButton";
             this.SaveSettingsButton.Size = new System.Drawing.Size(328, 37);
             this.SaveSettingsButton.TabIndex = 3;
             this.SaveSettingsButton.Text = "Применить настройки";
-            this.SaveSettingsButton.UseVisualStyleBackColor = true;
+            this.SaveSettingsButton.UseVisualStyleBackColor = false;
             this.SaveSettingsButton.Click += new System.EventHandler(this.SaveSettingsButton_Click);
             // 
             // pictureBox1

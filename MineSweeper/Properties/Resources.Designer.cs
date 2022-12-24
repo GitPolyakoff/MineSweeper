@@ -152,6 +152,15 @@ namespace MineSweeper.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream PUPXPLOD_1_1_ {
+            get {
+                return ResourceManager.GetStream("PUPXPLOD_1_1_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap S_T_A_L_K_E_R__Logo {
@@ -265,6 +274,25 @@ namespace MineSweeper.Properties {
         internal static System.Drawing.Bitmap Смайл3 {
             get {
                 object obj = ResourceManager.GetObject("Смайл3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Сталкер_Бар_100_Рентген__mp3_2020_com_ {
+            get {
+                return ResourceManager.GetStream("Сталкер_Бар_100_Рентген__mp3_2020_com_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Флажок_синий {
+            get {
+                object obj = ResourceManager.GetObject("Флажок_синий", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

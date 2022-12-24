@@ -19,13 +19,14 @@ namespace MineSweeper
             InitializeComponent();
         }
         Color color;
-
+        
         public Color Color
         {
             set { color = value; Invalidate(); }
             get { return color; }
         }
 
+       
         private void OKButton_Click(object sender, EventArgs e)
         {
             
@@ -41,7 +42,13 @@ namespace MineSweeper
 
         private void NamePanel_Paint(object sender, PaintEventArgs e)
         {
+            label1.Font = new System.Drawing.Font("Impact", 10F, System.Drawing.FontStyle.Regular,
+                    System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            OKButton.Font = new System.Drawing.Font("Impact", 11F, System.Drawing.FontStyle.Regular,
+                    System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            
         }
-           
+        
+        
     }
 }

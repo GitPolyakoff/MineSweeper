@@ -53,16 +53,16 @@ namespace MineSweeper
                     color = Color.Red;
 
                 if (1 == int.Parse(str1))
-                    color = Color.SkyBlue;
+                    color = Color.DarkGoldenrod;
 
                 if (2 == int.Parse(str1))
-                    color = Color.Yellow;
+                    color = Color.DarkCyan;
 
                 if (3 == int.Parse(str1))
                     color = Color.White;
                
                 if (4 == int.Parse(str1))
-                    color = Color.Gray;
+                    color = Color.Honeydew;
           
             }
             sr1.Close();
@@ -148,7 +148,6 @@ namespace MineSweeper
                         bombs--;
                         //открыть все соседние клетки
                         OpenRegion(clickedButton.xCoord, clickedButton.yCoord, clickedButton);
-
                         clickedButton.BackColor = Color.Silver;
                     }
                     else
@@ -162,41 +161,40 @@ namespace MineSweeper
             if (e.Button == MouseButtons.Right)//если нажата правая кнопка
             {
                 clickedButton.isClickable = !clickedButton.isClickable;//если активна кнопка - делаем неактивной
-
-                if (!clickedButton.isClickable)
+                if (!clickedButton.isClickable && BackColor == Color.Red)
+                {
+                    clickedButton.Image = Properties.Resources.Флажок_синий;
+                }
+                else if (!clickedButton.isClickable)
                 {
                     clickedButton.Image = Properties.Resources.Флажок1;
                 }
                 else
+                {
                     clickedButton.Image = null;
                     clickedButton.BackColor = color;
+                }
             }
             Victory();
         }
 
         void Detonation()
         {
-            SoundPlayer SPDet = new SoundPlayer(Properties.Resources.Finish);
-            SPDet.Play();
             //окрываем при попадании на бомбу все бомбы
             foreach (FieldButton button in field)
             {
-                if (button.isBomb && color == Color.White)
+              
+                 if (button.isBomb)
                 {
-                    button.BackColor = Color.White;
+                    button.BackColor = color;
                     button.Image = Properties.Resources.Бомба;
                     button.isClickable = false;
                 }
-               else if (button.isBomb)
-                {
-                    button.BackColor = Color.Black;
-                    button.Image = Properties.Resources.Бомба;
-                    button.isClickable = false;
-                }
-
                 else
+                {
                     button.Image = null;
                     button.Enabled = false;//делаем неактивными все кнопки при проигрыше
+                }
             }
             TotalTimeLabel.Text += time_label.Text.ToString();
             WinLoseLabel.Text = "Вы проиграли!!!";
@@ -205,6 +203,9 @@ namespace MineSweeper
             GameMenuPanel.Show();
             PausePictureBox.Hide();
             ReplayPictureBox.Hide();
+            SoundPlayer SPDET = new SoundPlayer(Properties.Resources.Finish);
+            
+            SPDET.Play();
         }
         
         void EmptyFieldButtonClick(FieldButton clickedButton)//открытие пустых
@@ -272,6 +273,7 @@ namespace MineSweeper
 
             clickedButton.Enabled = false;//делаем неактивной кнопку после нажатия на неё
             clickedButton.BackColor = Color.Silver;
+            clickedButton.Image = null;
         }
 
         int CountBombsAround(int xCoord, int yCoord)//подсчёт бомб вокруг кнопки в поле 3х3
@@ -411,6 +413,7 @@ namespace MineSweeper
             SoundPlayer SPNapr = new SoundPlayer(Properties.Resources.NAPRECHen);
             SPNapr.Play();
         }
+        
     }
 
     public class FieldButton : Button

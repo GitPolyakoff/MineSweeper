@@ -26,7 +26,24 @@ namespace MineSweeper
             StartPosition = FormStartPosition.CenterScreen;
             this.DoubleBuffered = true;
             StreamReader sr1 = new StreamReader(GlobalData.ColorForm);
-            string str1;           
+            string str1;
+
+            button_newGame.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular,
+                    System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            button_newGame.BackColor = Color.Gray;
+
+            button_leader.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular,
+                    System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            button_leader.BackColor = Color.Gray;
+
+            button_exit.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular,
+                    System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            button_exit.BackColor = Color.Gray;
+
+            DifficultyLabel.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular,
+                    System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            DifficultyLabel.BackColor = Color.Gray;
+            DifficultyLabel.ForeColor = Color.Red;
             while (!sr1.EndOfStream)
             {
                 str1 = sr1.ReadLine();
@@ -39,11 +56,11 @@ namespace MineSweeper
                 }
                 if (1 == int.Parse(str1))
                 {
-                    color = Color.SkyBlue;
+                    color = Color.DarkGoldenrod;
                 }
                 if (2 == int.Parse(str1))
                 {
-                    color = Color.Yellow;
+                    color = Color.DarkCyan;
                 }
                 if (3 == int.Parse(str1))
                 {
@@ -51,7 +68,7 @@ namespace MineSweeper
                 }
                 if (4 == int.Parse(str1))
                 {
-                    color = Color.Gray;
+                    color = Color.Honeydew;
                   
                 }
             }
@@ -84,6 +101,7 @@ namespace MineSweeper
                     DifficultyLabel.BackColor = Color.Gray;
                     DifficultyLabel.ForeColor = Color.Red;
                 }
+                
             }
             sr.Close();
 
@@ -143,6 +161,13 @@ namespace MineSweeper
                     leader.Show();
                     leader.BackColor = color;
                 }
+                else if (DifficultyLabel.Text == "Выберите уровень сложности!!!!")
+                {
+                    MessageBox.Show("ошибка не выбрана сложность!");
+                    SettingsScreen settings = new SettingsScreen();
+                    settings.Show();
+                    settings.BackColor = color;
+                }
             }
             sr.Close();
             
@@ -168,10 +193,16 @@ namespace MineSweeper
             button_newGame.BackColor = Color.Green;
             button_leader.Text = "Легендарные сталкеры";
             button_leader.BackColor = Color.Green;
-            button_exit.Text = "Слабак ты меченный";
+            button_exit.Text = "Слабак ты Меченный";
             button_exit.BackColor = Color.Red;
             BackColor = Color.DarkGray;
+            SoundPlayer SPDone = new SoundPlayer(Properties.Resources.Сталкер_Бар_100_Рентген__mp3_2020_com_);
+            SPDone.Play();
+            MainForm form = new MainForm();
+            form.BackgroundImage = Properties.Resources.S_T_A_L_K_E_R__Logo;
             
+            
+   
         }
 
 

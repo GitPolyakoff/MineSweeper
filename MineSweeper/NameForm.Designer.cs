@@ -50,9 +50,9 @@ namespace MineSweeper
             // 
             // OKButton
             // 
-            this.OKButton.Location = new System.Drawing.Point(66, 58);
+            this.OKButton.Location = new System.Drawing.Point(66, 56);
             this.OKButton.Name = "OKButton";
-            this.OKButton.Size = new System.Drawing.Size(75, 23);
+            this.OKButton.Size = new System.Drawing.Size(75, 25);
             this.OKButton.TabIndex = 2;
             this.OKButton.Text = "ОК";
             this.OKButton.UseVisualStyleBackColor = true;

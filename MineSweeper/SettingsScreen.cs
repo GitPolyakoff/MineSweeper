@@ -14,20 +14,77 @@ namespace MineSweeper
 {
     public partial class SettingsScreen : Form
     {
-
+        
         public SettingsScreen()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;//убираем кнопки навигации сверху
             StartPosition = FormStartPosition.CenterScreen;
             this.DoubleBuffered = true;
+            SaveSettingsButton.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular,
+                    System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            SaveSettingsButton.BackColor = Color.Gray;
+            
+
+            StreamReader sr1 = new StreamReader(GlobalData.ColorForm);
+            string str1;
+            while (!sr1.EndOfStream)
+            {
+                str1 = sr1.ReadLine();
+                //Проверка на пустую строку
+                if (string.IsNullOrEmpty(str1))
+                    continue;
+
+                if (0 == int.Parse(str1))
+                    ColorComboBox.SelectedIndex = 0;
+
+                if (1 == int.Parse(str1))
+                    ColorComboBox.SelectedIndex = 1;
+
+                if (2 == int.Parse(str1))
+                    ColorComboBox.SelectedIndex = 2; 
+
+                if (3 == int.Parse(str1))
+                    ColorComboBox.SelectedIndex = 3;
+
+                if (4 == int.Parse(str1))
+                    ColorComboBox.SelectedIndex = 4;
+
+            }
+            sr1.Close();
+
+            StreamReader sr2 = new StreamReader(GlobalData.DifficultSetting);
+            string str2;
+            while (!sr2.EndOfStream)
+            {
+                str2 = sr2.ReadLine();
+                //Проверка на пустую строку
+                if (string.IsNullOrEmpty(str2))
+                    continue;
+
+                if (0 == int.Parse(str2))
+                    DifficultyComboBox.SelectedIndex = 0;
+
+                if (1 == int.Parse(str2))
+                    DifficultyComboBox.SelectedIndex = 1;
+
+                if (2 == int.Parse(str2))
+                    DifficultyComboBox.SelectedIndex = 2;
+
+                if (3 == int.Parse(str2))
+                    DifficultyComboBox.SelectedIndex = 3;
+
+                if (4 == int.Parse(str2))
+                    DifficultyComboBox.SelectedIndex = 4;
+
+            }
+            sr2.Close();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Hide();
             MainForm mainForm = new MainForm();
-
             mainForm.Show();
             SoundPlayer SPEsc = new SoundPlayer(Properties.Resources.ESC);
             SPEsc.Play();
@@ -35,6 +92,7 @@ namespace MineSweeper
 
         private void SaveSettingsButton_Click(object sender, EventArgs e)
         {
+          
             SoundPlayer SPDone = new SoundPlayer(Properties.Resources.DONE);
             SPDone.Play();
             string path = GlobalData.DifficultSetting;
@@ -50,18 +108,18 @@ namespace MineSweeper
                     break;
 
                 case 1: //голубой
-                    this.BackColor = Color.SkyBlue;
+                    this.BackColor = Color.DarkGoldenrod;
                     break;
 
                 case 2: //жёлтый
-                    this.BackColor = Color.Yellow;
+                    this.BackColor = Color.DarkCyan;
                     break;
 
                 case 3: //системный
                     this.BackColor = Color.White;
                     break;
                 case 4: //серый
-                    this.BackColor = Color.Gray;
+                    this.BackColor = Color.Honeydew;
                     break;
             }
 
@@ -86,6 +144,7 @@ namespace MineSweeper
 
                 if (writer1 != null)
                     writer1.Dispose();
+                
             }
         }
 
@@ -100,5 +159,6 @@ namespace MineSweeper
             SoundPlayer SPDone = new SoundPlayer(Properties.Resources.DONE);
             SPDone.Play();
         }
+        
     }
 }
